@@ -9,6 +9,6 @@ pipeline {
 	  steps {
 	    echo "Hello"
 	  }
-     }
-   } 
+	}
+  }
 }
