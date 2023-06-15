@@ -10,7 +10,7 @@ pipeline {
 	    echo "Hello World!"
 	  }
 	}
-    stage('cat README') {
+    stage('for the fix branch') {
         when {
            branch "fix-*" 
 	}
@@ -18,6 +18,14 @@ pipeline {
 	sh '''
 	  cat README.md
 	'''
+	}
+    }
+    stage('for the PR branch') {
+        when {
+           branch "PR-*" 
+	}
+	steps {
+	  echo "this only runs for the PRs"
 	}
     }
   }
